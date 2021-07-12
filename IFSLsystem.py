@@ -143,10 +143,8 @@ def readinput():    #get IFS input from a file
     f.close()
 
 def draw():
-    xmin = IFS["xaxes"][0]
-    xmax = IFS["xaxes"][1]
-    ymin = IFS["yaxes"][0]
-    ymax = IFS["yaxes"][1]
+    xmin, xmax = IFS["xaxes"]
+    ymin, ymax = IFS["yaxes"]
     #Ask for window size
     wsize = int(input("Enter window size in pixels: "))  
     if ymax-ymin > xmax-xmin:
