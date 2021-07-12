@@ -1,0 +1,10 @@
+:#Levy Diamond
+:#https://larryriddle.agnesscott.org/ifs/levy/crystal.htm
+rule: F -> ++F--F--F++
+end of rules: 0
+axiom: F
+angle: 30
+direction: 0
+scaling: 0.5
+x-range: -0.35,1.35
+y-range: -0.15,0.9

@@ -1,0 +1,10 @@
+:#Levy Inside Tapestry
+:#https://larryriddle.agnesscott.org/ifs/levy/tapestryInside.htm
+rule: F -> +F--F+
+end of rules: 0
+axiom: F++F++F++F
+angle: 45
+direction: 0
+scaling: 0.7071067812
+x-range: -0.55,1.65
+y-range: -0.6,1.6

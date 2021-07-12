@@ -1,0 +1,10 @@
+:#Flowsnake Boundary
+:#https://larryriddle.agnesscott.org/ifs/ksnow/flowsnake.htm
+rule: F -> F-F+F
+end of rules: 0
+axiom: F+F+F+F+F+F+
+angle: 60
+direction: 0
+scaling: 0.377964473
+x-range: -0.5,2.6
+y-range: -1.3,1.8

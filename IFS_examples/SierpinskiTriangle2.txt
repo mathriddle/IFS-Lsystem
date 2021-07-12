@@ -1,0 +1,12 @@
+:#Sierpinski Triangle 2
+:#https://larryriddle.agnesscott.org/ifs/siertri/siertri.htm
+rule: F->Z
+rule: X -> +FY-FX-FY+
+rule: Y -> -FX+FY+FX-
+end of rules: 0
+axiom: FX
+angle: 60
+direction: 0
+scaling: 0.5
+x-range: -0.05,1.05
+y-range: -0.05,1.05

@@ -1,0 +1,10 @@
+:#Koch Anti-Snowflake Boundary
+:#https://larryriddle.agnesscott.org/ifs/ksnow/kantisnow.htm
+rule: F -> F+F--F+F
+end of rules: 0
+axiom: F++F++F
+angle: 60
+direction: 0
+scaling: 0.333333
+x-range: -0.1,1.1
+y-range: -0.2,1.0

@@ -1,0 +1,10 @@
+:#Levy Outside Tapestry
+:#https://larryriddle.agnesscott.org/ifs/levy/tapestryOutside.htm
+rule: F -> -F++F-
+end of rules: 0
+axiom: F++F++F++F
+angle: 45
+direction: 0
+scaling: 0.7071067812
+x-range: -1,2.1
+y-range: -1.1,2

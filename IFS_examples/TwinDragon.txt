@@ -1,0 +1,12 @@
+:#Twindragon
+:#https://larryriddle.agnesscott.org/ifs/heighway/twindragon.htm
+rule: F -> Z
+rule: X -> +FX--FY+
+rule: Y -> -FX++FY-
+end of rules: 0
+axiom: FX----FX
+angle: 45
+direction: 0
+scaling: 0.7071067812
+x-range: -0.4,1.4
+y-range: -0.9,0.9

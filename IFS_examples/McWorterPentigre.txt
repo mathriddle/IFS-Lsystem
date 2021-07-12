@@ -1,0 +1,10 @@
+:#McWorter's Pentigree
+:#https://larryriddle.agnesscott.org/ifs/pentigre/pentigre2.htm
+rule: F -> +F++F----F--F++F++F-
+end of rules: 0
+axiom: F
+angle: 36
+direction: 0
+scaling: 0.381966
+x-range: -0.15,1.15
+y-range: -0.45,0.85

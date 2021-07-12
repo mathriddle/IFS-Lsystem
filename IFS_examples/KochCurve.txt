@@ -1,0 +1,10 @@
+:#Koch Curve
+:#https://larryriddle.agnesscott.org/ifs/kcurve/kcurve.htm
+rule: F -> F+F--F+F
+end of rules: 0
+axiom: F
+angle: 60
+direction: 0
+scaling: 0.333333
+x-range: -0.05,1.05
+y-range: -0.4,0.7

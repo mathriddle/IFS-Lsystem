@@ -1,0 +1,10 @@
+:#Fudgeflake
+:#https://larryriddle.agnesscott.org/ifs/heighway/fudgeflake.htm
+rule: F -> +F----F++++F-
+end of rules: 0
+axiom: F++++F++++F
+angle: 30
+direction: 0
+scaling: 0.5773502692
+x-range: -0.3,1.2
+y-range: -0.45,1.05

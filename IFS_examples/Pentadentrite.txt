@@ -1,0 +1,10 @@
+:#Pentadentrite
+:#https://larryriddle.agnesscott.org/ifs/pentigre/pentigre2.htm
+rule: F -> F+F-F--F+F+F
+end of rules: 0
+axiom: F
+angle: 72
+direction: 0
+scaling: 0.34845
+x-range: -0.1,1.25
+y-range: -1,0.35
