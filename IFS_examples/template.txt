@@ -1,1 +1,9 @@
-
+:# <name>
+rule: 
+end of rules: 0
+axiom: 
+angle: 
+direction: 
+scaling: 
+x-range: 
+y-range: 
