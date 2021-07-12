@@ -1,4 +1,4 @@
-""""
+"""
 Drawing fractals of iterated function systems using L-system
 Modified from original Python program by Gianni Perez (2018) at 
 https://github.com/ambron60/l-system-drawing
@@ -18,7 +18,7 @@ usage:
     python IFSLsystem.py
        or
     python IFSLsystem.py filename.txt
-""""
+"""
 
 import turtle
 import sys
