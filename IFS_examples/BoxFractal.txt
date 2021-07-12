@@ -6,6 +6,5 @@ axiom: F+F+F+F
 angle: 90
 direction: 0
 scaling: 0.333333
-iterations: 3
 x-range: -0.05,1.05
 y-range: -0.05,1.05
