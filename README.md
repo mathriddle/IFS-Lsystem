@@ -38,7 +38,7 @@ direction: 0 \
 scaling: 0.7071067812 \
 iterations: 8 \
 x-range: -0.4,1.25 \
-y-range: -0.6,1.05 \
+y-range: -0.6,1.05 
 
 Example files are contained in the IFS folder.
 
