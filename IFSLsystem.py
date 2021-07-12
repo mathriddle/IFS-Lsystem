@@ -43,7 +43,7 @@ def rule(sequence):
 def draw_l_system(turtle, SYSTEM_RULES, seg_length, angle, init_heading):
     turtle.pd()
     turtle.hideturtle()
-    turtle.pensize(2)
+    turtle.pensize(1)
     turtle.speed(0)
     turtle.setheading(init_heading)    
     stack = []
