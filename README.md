@@ -28,7 +28,6 @@ Usage: \
     
 A typical file would look like \
 :# Heighway Dragon \
-:# https://larryriddle.agnesscott.org/ifs/heighway/heighway.htm \
 rule: F -> Z \
 rule: X -> +FX--FY+ \
 rule: Y -> -FX++FY- \
@@ -42,3 +41,6 @@ x-range: -0.4,1.25 \
 y-range: -0.6,1.05 \
 
 Example files are contained in the IFS folder.
+
+For more information about the fractals of some classic iterated function systems, see \
+https://larryriddle.agnesscott.org/ifs/ifs.htm
