@@ -23,6 +23,7 @@ usage:
 import turtle
 import sys
 import os
+import re
 
 SYSTEM_RULES = {}  # generator system rules for l-system
 IFS = {}                    # holds info about iterated function system
@@ -33,14 +34,17 @@ def derivation(axiom, steps):
         next_seq = derived[-1]
         next_axiom = [rule(char) for char in next_seq]
         derived.append(''.join(next_axiom))
-    return derived
+    s = re.sub('[^FGRLf+\-\[\]c]',"",derived[-1])  # remove extraneous symbols in sequence
+    while s.find("+-")+s.find("-+") > -2:          # cancel +- and -+ terms
+        s=s.replace("+-","").replace("-+","")
+    return s
 
 def rule(sequence):
     if sequence in SYSTEM_RULES:
         return SYSTEM_RULES[sequence]
     return sequence
 
-def draw_l_system(turtle, SYSTEM_RULES, seg_length, angle, init_heading):
+def draw_l_system(turtle, lsystem, seg_length, angle, init_heading):
     turtle.pd()
     turtle.hideturtle()
     turtle.pensize(1)
@@ -50,7 +54,7 @@ def draw_l_system(turtle, SYSTEM_RULES, seg_length, angle, init_heading):
     kolors = ["black","red","DarkGreen","blue","DarkOrange2","brown","purple"]
     curKolor = 0
     turtle.color(kolors[curKolor])
-    for command in SYSTEM_RULES:
+    for command in lsystem:
         if command in ["F", "G", "R", "L"]:
             turtle.forward(seg_length)
         elif command == "f":
@@ -167,7 +171,7 @@ def draw():
     while (iterations > 0):    #Create the L-system
         model = derivation(IFS["axiom"], iterations)  # axiom (initial string), nth iterations
         segment_length = IFS["scale"]**iterations   
-        draw_l_system(t, model[-1], segment_length, IFS["angle"], IFS["alpha"])  # draw model
+        draw_l_system(t, model, segment_length, IFS["angle"], IFS["alpha"])  # draw model
         iterations = int(input("Enter number of iterations (0 to end): "))     
         if (iterations > 0): win.reset()      
     if (winCreated):
