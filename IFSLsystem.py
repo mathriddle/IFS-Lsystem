@@ -1,5 +1,6 @@
 """
-Drawing fractals of iterated function systems using L-system
+Drawing fractals of iterated function systems using L-system.
+Uses coordinate system with L-system starting at (0,0).
 Modified from original Python program by Gianni Perez (2018) at 
 https://github.com/ambron60/l-system-drawing
 Input:
@@ -35,7 +36,7 @@ def derivation(axiom, steps):
         next_axiom = [rule(char) for char in next_seq]
         derived.append(''.join(next_axiom))
     s = re.sub('[^FGRLf+\-\[\]c]',"",derived[-1])  # remove extraneous symbols in sequence
-    while s.find("+-")+s.find("-+") > -2:          # cancel +- and -+ terms
+    while s.find("+-")+s.find("-+") > -2:              # cancel +- and -+ terms
         s=s.replace("+-","").replace("-+","")
     return s
 
@@ -44,16 +45,12 @@ def rule(sequence):
         return SYSTEM_RULES[sequence]
     return sequence
 
-def draw_l_system(turtle, lsystem, seg_length, angle, init_heading):
-    turtle.pd()
-    turtle.hideturtle()
-    turtle.pensize(1)
-    turtle.speed(0)
+def draw_l_system(turtle, lsystem, seg_length, angle, init_heading, fill):
     turtle.setheading(init_heading)    
     stack = []
-    kolors = ["black","red","DarkGreen","blue","DarkOrange2","brown","purple"]
+    kolors = ["black","red","DarkGreen","blue","DarkOrange","brown","purple"]
     curKolor = 0
-    turtle.color(kolors[curKolor])
+    if fill: turtle.begin_fill()
     for command in lsystem:
         if command in ["F", "G", "R", "L"]:
             turtle.forward(seg_length)
@@ -75,7 +72,8 @@ def draw_l_system(turtle, lsystem, seg_length, angle, init_heading):
             turtle.pd()
         elif command == "c":  #used with axiom when multiple copies of fractal are drawn
             curKolor = (curKolor+1) % len(kolors)
-            turtle.color(kolors[curKolor])
+            turtle.pencolor(kolors[curKolor])
+    if fill: turtle.end_fill()
 
 def userinput():    #user enters IFS info manually
     #Ask for rules. A rule must include the -> notation
@@ -147,8 +145,8 @@ def readinput():    #get IFS input from a file
     f.close()
 
 def draw():
-    xmin, xmax = IFS["xaxes"]
-    ymin, ymax = IFS["yaxes"]
+    xmin,xmax = IFS["xaxes"]
+    ymin,ymax = IFS["yaxes"]
     #Ask for window size
     wsize = int(input("Enter window size in pixels: "))  
     if ymax-ymin > xmax-xmin:
@@ -166,14 +164,18 @@ def draw():
         win.setup(xsize, ysize)
         win.setworldcoordinates(xmin,ymin,xmax,ymax) 
         t = turtle.Turtle()  # recursive turtle
-        t.hideturtle() 
         winCreated = True
     while (iterations > 0):    #Create the L-system
+        t.hideturtle()
+        t.pencolor("black") 
+        t.fillcolor("lightgray")
+        t.shape("turtle")
+        fill = False
         model = derivation(IFS["axiom"], iterations)  # axiom (initial string), nth iterations
-        segment_length = IFS["scale"]**iterations   
-        draw_l_system(t, model, segment_length, IFS["angle"], IFS["alpha"])  # draw model
+        segment_length = IFS["scale"]**iterations
+        draw_l_system(t, model, segment_length, IFS["angle"], IFS["alpha"],fill)  # draw model
         iterations = int(input("Enter number of iterations (0 to end): "))     
-        if (iterations > 0): win.reset()      
+        if (iterations > 0): win.reset()
     if (winCreated):
         win.exitonclick()   #Graphics window closes when user clicks in window
 
