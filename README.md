@@ -44,3 +44,6 @@ Example files are contained in the IFS folder.
 
 For more information about the fractals of some classic iterated function systems, see \
 https://larryriddle.agnesscott.org/ifs/ifs.htm
+
+For an example of running a similar program in Google's Colaboratory, see the Sierpinski example at \
+https://github.com/mathriddle/ColabTurtlePlus/blob/main/examples/SierpinskiTriangle.md
